@@ -1,0 +1,100 @@
+Ejercicio1;
+<?xml version="1.0" encoding="UTF-8"?>
+<ies>
+  <nombre>IES Gonzalo Nazareno</nombre>
+  <web>http://www.gonzalonazareno.org</web>
+  <ciclos>
+    <ciclo id="ASIR">
+      <nombre>Administración de Sistemas Informáticos en Red</nombre>
+      <grado>Superior</grado>
+      <decretoTitulo año="2009" />
+    </ciclo>
+    <ciclo id="DAW">
+      <nombre>Desarrollo de Aplicaciones Web</nombre>
+      <grado>Superior</grado>
+      <decretoTitulo año="2010" />
+    </ciclo>
+    <ciclo id="SMR">
+      <nombre>Sistemas Microinformáticos y Redes</nombre>
+      <grado>Medio</grado>
+      <decretoTitulo año="2008" />
+    </ciclo>
+  </ciclos>
+</ies>
+
+1;
+/ies/nombre/
+
+2;
+/ies/web/
+
+3;
+/ies/ciclos/ciclo/nombre/text()
+
+4;
+/ies/ciclos/ciclo/@id
+
+5;
+/ies/ciclos/ciclo/decretoTitulo/@año
+
+6;
+/ies/ciclos/ciclo[@id="SMR"]
+
+7;
+/ies/ciclos//ciclo[grado="Superior"]/nombre/text()
+
+8;
+/ies/ciclos/ciclo[decretoTitulo/@año < "2010"]/nombre/text()
+
+9;
+//ciclo[decretoTitulo[@año='2008' or @año='2010']]/nombre/text()
+
+Ejercicio2;
+<?xml version="1.0" encoding="UTF-8"?>
+<ies>
+  <modulos>
+    <modulo id="0228">
+      <nombre>Aplicaciones web</nombre>
+      <curso>2</curso>
+      <horasSemanales>4</horasSemanales>
+      <ciclo>SMR</ciclo>
+    </modulo>
+    <modulo id="0372">
+      <nombre>Gestión de bases de datos</nombre>
+      <curso>1</curso>
+      <horasSemanales>5</horasSemanales>
+      <ciclo>ASIR</ciclo>
+    </modulo>
+    <modulo id="0373">
+      <nombre>Lenguajes de marcas y sistemas de gestión de información</nombre>
+      <curso>1</curso>
+      <horasSemanales>3</horasSemanales>
+      <ciclo>ASIR</ciclo>
+      <ciclo>DAW</ciclo>
+    </modulo>
+    <modulo id="0376">
+      <nombre>Implantación de aplicaciones web</nombre>
+      <curso>2</curso>
+      <horasSemanales>5</horasSemanales>
+      <ciclo>ASIR</ciclo>
+    </modulo>
+  </modulos>
+</ies>
+
+1;
+/ies/modulos/modulo/nombre/text()
+
+2;
+/ies/modulos/modulo[ciclo = "ASIR"]/nombre/text()
+
+3;
+/ies/modulos/modulo[curso = "2"]/nombre/text()
+
+4;
+/ies/modulos/modulo[horasSemanales < "5"]/nombre/text()
+
+5;
+/ies/modulos/modulo[curso ="1" and ciclo = "ASIR"]/nombre/text()
+
+6;
+/ies/modulos/modulo[horasSemanales > 3]/horasSemanales/text()
